@@ -1,0 +1,50 @@
+﻿
+@media screen and (max-width:768px) {
+    .login {
+        height: 1000px !important;
+    }
+   
+}
+
+@media screen and (max-width:576px) {
+    .flex-xs-column {
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width:520px) {
+    .login {
+        height: 800px !important;
+    }
+    .btn-primary {
+        padding-top: 10px;
+        width: 80px !important;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .login {
+        height: 800px !important;
+    }
+
+    .btn-primary {
+        padding-top: 10px;
+        width: 80px !important;
+    }
+}
+
+
+
+
+@media screen and (max-width:326px) {
+    .login {
+        height: 800px !important;
+
+    }
+    .btn-primary{
+        padding-top: 10px;
+    }
+}
+
+
