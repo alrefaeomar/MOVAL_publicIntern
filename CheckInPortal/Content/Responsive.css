@@ -6,12 +6,16 @@
    
 }
 
+/* Display column at 576px screen size*/
+
 @media screen and (max-width:576px) {
     .flex-xs-column {
         flex-direction: column;
     }
 }
 
+
+/* Modifiy padding and size of button and login div */
 
 @media screen and (max-width:520px) {
     .login {
@@ -33,8 +37,6 @@
         width: 80px !important;
     }
 }
-
-
 
 
 @media screen and (max-width:326px) {
