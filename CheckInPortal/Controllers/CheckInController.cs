@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace CheckInPortal.Controllers
 {
-    public class HomeController : Controller
+    public class CheckInController : Controller
     {
+        // GET: CheckIn
         public ActionResult Index()
         {
             return View();
         }
-
-      
     }
 }

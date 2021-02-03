@@ -44,13 +44,8 @@ input {
     width: 30%;
 }
 
-.CheckInPage {
-    padding-top: 90px;
-}
-
-
 .MVC-Brand{
-    width: 10%;
+    width: 15%;
 }
 
 .p-1 h1{
@@ -145,6 +140,12 @@ input {
 
 .btn{
     width: 200px !important;
+}
+
+.Student-pic {
+    -webkit-box-shadow: -2px 9px 43px -6px rgba(0,0,0,0.55);
+    -moz-box-shadow: -2px 9px 43px -6px rgba(0,0,0,0.55);
+    box-shadow: -0px 9px 43px -6px rgba(0,0,0,0.55);
 }
 
 .btn-Exit {
