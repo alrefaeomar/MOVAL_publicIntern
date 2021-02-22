@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CheckInDBModelStoreContainer" CdmEntityContainer="CheckInDBEntities">
+    <EntitySetMapping Name="STD_Table">
+      <EntityTypeMapping TypeName="CheckInDBModel.STD_Table">
+        <MappingFragment StoreEntitySet="STD_Table">
+          <ScalarProperty Name="STD_ID" ColumnName="STD_ID" />
+          <ScalarProperty Name="STD_NAME" ColumnName="STD_NAME" />
+          <ScalarProperty Name="STD_ENTRANCE" ColumnName="STD_ENTRANCE" />
+          <ScalarProperty Name="STD_RESIDENCE" ColumnName="STD_RESIDENCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

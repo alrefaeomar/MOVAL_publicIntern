@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckInDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="STD_Table">
+    <Key>
+      <PropertyRef Name="STD_ID" />
+    </Key>
+    <Property Name="STD_ID" Type="Int32" Nullable="false" />
+    <Property Name="STD_NAME" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="STD_ENTRANCE" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="STD_RESIDENCE" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CheckInDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="STD_Table" EntityType="Self.STD_Table" />
+  </EntityContainer>
+</Schema>

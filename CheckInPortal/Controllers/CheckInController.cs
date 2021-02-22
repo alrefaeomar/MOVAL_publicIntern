@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CheckInPortal.Models;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Configuration;
+
 
 namespace CheckInPortal.Controllers
 {
@@ -11,6 +18,7 @@ namespace CheckInPortal.Controllers
         // GET: CheckIn
         public ActionResult Index()
         {
+
             return View();
         }
     }

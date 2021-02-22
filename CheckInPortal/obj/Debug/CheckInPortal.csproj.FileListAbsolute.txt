@@ -54,3 +54,7 @@ C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\obj\Debug\CheckInPortal.
 C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\obj\Debug\CheckInPortal.csproj.CopyComplete
 C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\obj\Debug\CheckInPortal.dll
 C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\obj\Debug\CheckInPortal.pdb
+C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\bin\EntityFramework.dll
+C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\bin\EntityFramework.SqlServer.dll
+C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\bin\EntityFramework.xml
+C:\Users\sebas\source\repos\CheckInPortal\CheckInPortal\bin\EntityFramework.SqlServer.xml

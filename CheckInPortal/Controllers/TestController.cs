@@ -1,4 +1,6 @@
-﻿using System;
+﻿/*
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,33 +12,37 @@ using System.Configuration;
 
 namespace CheckInPortal.Controllers
 {
-    public class TestClass
-    {
-        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
-
-        private static string GetName()
-        {
-            string sqlQuery = " SELECT Student_name FROM Student_table";
-            string temp = "";
+public class TestClass
+{
 
 
-            using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
-            {
-                con.Open();
+  static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
 
-                SqlDataReader cmdReader = cmd.ExecuteReader();
-
-                if (cmdReader.Read())
-                {
-                    temp = cmdReader[0].ToString();
-                }
-
-                con.Close();
-            }
+  private static string GetName()
+  {
+      string sqlQuery = " SELECT Student_name FROM Student_table";
+      string temp = "";
 
 
+      using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+      {
+          con.Open();
 
-            return temp;
-        }
-    }
+          SqlDataReader cmdReader = cmd.ExecuteReader();
+
+          if (cmdReader.Read())
+          {
+              temp = cmdReader[0].ToString();
+          }
+
+          con.Close();
+      }
+
+
+
+      return temp;
+
 }
+}
+}
+          */
