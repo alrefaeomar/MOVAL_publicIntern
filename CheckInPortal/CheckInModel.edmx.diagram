@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="476095fd1518480d8d3229544fdbb438" Name="Diagram1">
-        <EntityTypeShape EntityType="CheckInDBModel.STD_Table" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CheckInDBModel.STD_Table" Width="4" PointX="0.75" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
