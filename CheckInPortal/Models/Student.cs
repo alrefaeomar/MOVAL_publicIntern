@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CheckInPortal.Models
 {
-    public class UserModel
+    public class Student
     {
         public string stdId { get; set; }
         public string stdName { get; set; }

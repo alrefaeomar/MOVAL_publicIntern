@@ -15,73 +15,48 @@ namespace CheckInPortal.Controllers
 {
     public class CheckInController : Controller
     {
-        // GET: CheckIn
-        public ActionResult Index(string stdSearch)
 
+        public ActionResult Search(string stdSearch)
         {
-        // Set conn
+
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
+
+
            
-
             //Select Table Where student Id is the Input 
-            string sqlQuery = @"SELECT STD_NAME, STD_ENTRANCE, STD_RESIDENCE FROM STUDENT_TABLE WHERE STD_ID=@sid";
-            using (SqlCommand sqlComm = new SqlCommand(sqlQuery, sqlConn))
-            { 
-                sqlConn.Open();
-                sqlComm.Parameters.AddWithValue("@sid", (object)stdSearch?? DBNull.Value);
-           
 
-                SqlDataReader sqlRead = sqlComm.ExecuteReader();
+            string sqlQuery = "SELECT STD_NAME, STD_ENTRANCE, STD_RESIDENCE FROM STUDENT_TABLE WHERE STD_ID=@sid";
 
-               if(sqlRead.Read())
-                {
-                    UserModel user = new Models.UserModel();
-
-                    user.stdId = sqlRead["STD_ID"].ToString();
-                    user.stdName = sqlRead["STD_NAME"].ToString();
-                    user.stdResidence = sqlRead["STD_RESIDENCE"].ToString();
-                    user.stdEntrance = sqlRead["STD_ENTRACE"].ToString();
-                    
-
-                    return View(user);
-                }
-
-            }
-            sqlConn.Close();
-             
-
-            
-
-            return View();
-
-            /*
-            // Set conn
-            SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
-            //Select Table Where student Id is the Input 
-            string sqlQuery = "SELECT * FROM [dbo].[STD_Table] WHERE STD_ID=@sid";
-
+            var model = new List<Student>();
             using (SqlCommand sqlComm = new SqlCommand(sqlQuery, sqlConn))
             {
+                var student = new Student();
                 sqlConn.Open();
                 sqlComm.Parameters.AddWithValue("@sid", stdSearch);
 
-                //Set Data
 
-                SqlDataReader sqlRead = sqlQuery.e;
+                    SqlDataReader sqlRead = sqlComm.ExecuteReader();
 
-                DataSet dataSet = new DataSet();
+                if (sqlRead.Read())
+                {
 
-
+                    student.stdName = sqlRead["STD_NAME"].ToString();
+                    student.stdResidence = sqlRead["STD_RESIDENCE"].ToString();
+                    student.stdEntrance = sqlRead["STD_ENTRANCE"].ToString();
+                    model.Add(student);
+                }
                 sqlConn.Close();
-
-
             }
+            return View(model);
+        }
+        // GET: CheckIn
+        public ActionResult Index()
+
+        {
+
+
 
             return View();
-
-            */
-
-
 
         }
     }
