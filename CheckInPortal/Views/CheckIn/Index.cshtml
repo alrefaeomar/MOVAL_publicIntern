@@ -14,29 +14,30 @@
                         <h1 class="text-left">Missouri Valley College Check-In Service</h1>
                         <hr />
                         <!--Input Group to Search Student Info-->
-                        @using (Html.BeginForm("Search", "CheckIn", FormMethod.Post))
+                        @using (Html.BeginForm("Index", "CheckIn", FormMethod.Post))
                         {
-
-                            <form method="post">
+                            <form id="CheckForm">
                                 <div class="input-group mb-3">
-                                    <!-- I need to configure the textbox to pass the value to the stdSearch String-->
                                     @Html.TextBox("stdSearch", null, new { @class = "form-control", placeholder = "Student ID" })
                                 </div>
                                 <div class="input-group mb-3">
-                                    @Html.TextBoxFor(model => model.stdName, null, new { @class = "form-control", placeholder = "Student Name", disabled = "disabled" })
-                                    </div>
-                                <div class="input-group mb-3">
-                                    @Html.TextBoxFor(model => model.stdEntrance, null, new { @class = "form-control", placeholder = "Student Entrance", disabled = "disabled" })
+                                    @Html.TextBoxFor(model => model.stdName, new { @class = "form-control", placeholder = "Student Name", disabled = "disabled" })
                                 </div>
                                 <div class="input-group mb-3">
-                                    @Html.TextBoxFor(model => model.stdResidence, null, new { @class = "form-control", placeholder = "Student Residence", disabled = "disabled" })
+                                    @Html.TextBoxFor(model => model.stdEntrance, new { @class = "form-control", placeholder = "Student Entrance", disabled = "disabled" })
+                                </div>
+                                <div class="input-group mb-3">
+                                    @Html.TextBoxFor(model => model.stdResidence, new { @class = "form-control", placeholder = "Student Residence", disabled = "disabled" })
                                 </div>
                                 <div class="p-2 text-center">
-                                    <input type="submit" value="Start" class="btn btn-primary mt-4" />
-                                    <button onclick="" class="btn btn-Exit mt-4">Clear Data</button>
+                                    <input type="submit" value="Submit" class="btn btn-primary mt-4" />
+                                    <input type="button" value="Clear Data" class="btn btn-Exit mt-4" onclick="location.href='@Url.Action("Clear", "Index")'" />
+
                                 </div>
                             </form>
                         }
+
+
                         <hr />
 
                         <!--Student Picture -->

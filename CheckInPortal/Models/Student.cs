@@ -7,7 +7,7 @@ namespace CheckInPortal.Models
 {
     public class Student
     {
-        public string stdId { get; set; }
+        public int stdId { get; set; }
         public string stdName { get; set; }
         public string stdEntrance { get; set; }
         public string stdResidence { get; set; }
