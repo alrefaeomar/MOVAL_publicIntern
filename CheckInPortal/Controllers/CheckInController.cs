@@ -38,11 +38,23 @@ namespace CheckInPortal.Controllers
 
                 if (sqlRead.Read())
                 {
-           
+
                     student.stdName = sqlRead["STD_NAME"].ToString();
                     student.stdResidence = sqlRead["STD_RESIDENCE"].ToString();
                     student.stdEntrance = sqlRead["STD_ENTRANCE"].ToString();
-                    
+
+
+                    student.registrarOff = sqlRead["STD_ENTRANCE"].ToString();
+                    student.finAid = sqlRead["STD_ENTRANCE"].ToString();
+                    student.bussOff = sqlRead["STD_ENTRANCE"].ToString();
+                    student.admissions = sqlRead["STD_ENTRANCE"].ToString();
+
+                    student.consenTreat = sqlRead["STD_ENTRANCE"].ToString();
+                    student.medicalAlert = sqlRead["STD_ENTRANCE"].ToString();
+                    student.immunizations = sqlRead["STD_ENTRANCE"].ToString();
+                    student.emergContact = sqlRead["STD_ENTRANCE"].ToString();
+
+
                 }
                 sqlConn.Close();
             }
