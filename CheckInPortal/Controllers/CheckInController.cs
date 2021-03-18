@@ -46,10 +46,10 @@ namespace CheckInPortal.Controllers
                 }
                 sqlConn.Close();
             }
-            return View(student);
+            return PartialView(student);
         }
         // GET: CheckIn
-      
+
         public ActionResult Clear(Student student)
         {
             int stdid = student.stdId;
@@ -61,7 +61,7 @@ namespace CheckInPortal.Controllers
             return View();
         }
 
-   
+   [HttpGet]
         public ActionResult Index()
         {
             return View();
