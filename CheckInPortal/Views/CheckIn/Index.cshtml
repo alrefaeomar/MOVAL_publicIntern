@@ -4,10 +4,6 @@
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
 
-<link href="~/Content/Site.css" rel="Stylesheet" type="text/css" />
-<link href="~/Content/Responsive.css" rel="Stylesheet" type="text/css" />
-
-
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-purple">
     <div class="container-fluid text-center align-content-center justify-content-center">
@@ -26,27 +22,27 @@
                     <h1 class="text-left">Missouri Valley College Check-In Service</h1>
                     <hr />
                     <!--Input Group to Search Student Info-->
-
+                   
 
                     @using (Html.BeginForm("Index", "CheckIn", FormMethod.Post))
                     {
                         <form id="CheckForm" onsubmit="return false">
                             <div class="input-group mb-3">
-                                @Html.TextBox("stdSearch", null, new { @class = "form-control", placeholder = "Student ID" })
+                                @Html.TextBox("stdSearch", null, new { @class = "form-control", @id = "form-control", placeholder = "Student ID" })
                             </div>
                             <div class="input-group mb-3">
-                                @Html.TextBoxFor(model => model.stdName, new { @class = "form-control", placeholder = "Student Name", disabled = "disabled" })
+                                @Html.TextBoxFor(model => model.stdName, new { @class = "form-control", @id= "form-control", placeholder = "Student Name", disabled = "disabled" })
                             </div>
                             <div class="input-group mb-3">
-                                @Html.TextBoxFor(model => model.stdEntrance, new { @class = "form-control", placeholder = "Student Entrance", disabled = "disabled" })
+                                @Html.TextBoxFor(model => model.stdEntrance, new { @class = "form-control", @id = "form-control", placeholder = "Student Entrance", disabled = "disabled" })
                             </div>
                             <div class="input-group mb-3">
-                                @Html.TextBoxFor(model => model.stdResidence, new { @class = "form-control", placeholder = "Student Residence", disabled = "disabled" })
+                                @Html.TextBoxFor(model => model.stdResidence, new { @class = "form-control", @id = "form-control", placeholder = "Student Residence", disabled = "disabled" })
                             </div>
                             <div class="p-2 text-center">
                                 <button type="submit" id="submitBtn" class="btn btn-primary mt-4">Submit</button>
-                                <button type="reset" class="btn btn-Exit mt-4">Clear Data</button>
-
+                                <button type="submit" value="Clear" name="Button" class="btn btn-Exit mt-4">Clear Data</button>
+                                
                             </div>
                         </form>
                     }

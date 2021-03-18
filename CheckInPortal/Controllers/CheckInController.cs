@@ -17,7 +17,7 @@ namespace CheckInPortal.Controllers
     {
 
         [HttpPost]
-        public ActionResult Index(string stdSearch, Student student)
+        public ActionResult Index(string stdSearch, Student student, string Button)
         {
 
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
@@ -58,6 +58,15 @@ namespace CheckInPortal.Controllers
                 }
                 sqlConn.Close();
             }
+
+            // Clear data Button
+            if (Button == "Clear")
+            {
+                ModelState.Clear();
+                return PartialView();
+            }
+
+
             return PartialView(student);
         }
         // GET: CheckIn
