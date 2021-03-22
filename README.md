@@ -9,3 +9,8 @@ Since we are facing a pandemic right now, the need of a contactless measurement 
 * Javascript
 * C#
 * SQL Server
+* Bootstrap
+
+## Usage
+The students will be able to input their ID numbers in order to check what needs to be done in the offices of the college, also their residence and entrance. It is as easy as the user input his or her ID and click on the submit button to view their information.
+
