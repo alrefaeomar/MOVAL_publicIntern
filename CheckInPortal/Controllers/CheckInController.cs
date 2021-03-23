@@ -22,9 +22,16 @@ namespace CheckInPortal.Controllers
 
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
 
-            //Select Table Where student Id is the Input 
 
-            string sqlQuery = "SELECT STD_NAME, STD_ENTRANCE, STD_RESIDENCE FROM STUDENT_TABLE WHERE STD_ID=@sid";
+
+            // Rest of Offices
+            //, REGISTRAR, FIN_AID, BUSS_OFFICE, ADMISSIONS, CONSENT_TREAT, MED_ALERT, IMMUNIZATIONS, EMERG_CONTACT
+
+
+            //Select Table Where student Id is the Input 
+            string sqlQuery = @"SELECT STUDENT_TABLE.STD_ID, STD_NAME, STD_ENTRANCE, STD_RESIDENCE, REGISTRAR, 
+                FIN_AID, BUSS_OFFICE, ADMISSIONS, CONSENT_TREAT, MED_ALERT, IMMUNIZATIONS, EMERG_CONTACT FROM STUDENT_TABLE
+                INNER JOIN OFFICES_TABLE ON STUDENT_TABLE.STD_ID = OFFICES_TABLE.STD_ID WHERE STUDENT_TABLE.STD_ID=@sid";
 
             
             using (SqlCommand sqlComm = new SqlCommand(sqlQuery, sqlConn))
@@ -43,18 +50,20 @@ namespace CheckInPortal.Controllers
                     student.stdResidence = sqlRead["STD_RESIDENCE"].ToString();
                     student.stdEntrance = sqlRead["STD_ENTRANCE"].ToString();
 
+                    
 
-                    student.registrarOff = sqlRead["STD_ENTRANCE"].ToString();
-                    student.finAid = sqlRead["STD_ENTRANCE"].ToString();
-                    student.bussOff = sqlRead["STD_ENTRANCE"].ToString();
-                    student.admissions = sqlRead["STD_ENTRANCE"].ToString();
+                    student.registrarOff = sqlRead["REGISTRAR"].ToString();
+                    student.finAid = sqlRead["FIN_AID"].ToString();
+                    student.bussOff = sqlRead["BUSS_OFFICE"].ToString();
+                    student.admissions = sqlRead["ADMISSIONS"].ToString();
 
-                    student.consenTreat = sqlRead["STD_ENTRANCE"].ToString();
-                    student.medicalAlert = sqlRead["STD_ENTRANCE"].ToString();
-                    student.immunizations = sqlRead["STD_ENTRANCE"].ToString();
-                    student.emergContact = sqlRead["STD_ENTRANCE"].ToString();
+                    student.consenTreat = sqlRead["CONSENT_TREAT"].ToString();
+                    student.medicalAlert = sqlRead["MED_ALERT"].ToString();
+                    student.immunizations = sqlRead["IMMUNIZATIONS"].ToString();
+                    student.emergContact = sqlRead["EMERG_CONTACT"].ToString();
 
-
+                    
+                    
                 }
                 sqlConn.Close();
             }
@@ -64,24 +73,12 @@ namespace CheckInPortal.Controllers
             {
                 ModelState.Clear();
                 return PartialView();
-            }
+            } 
 
 
             return PartialView(student);
         }
         // GET: CheckIn
-
-        public ActionResult Clear(Student student)
-        {
-            int stdid = student.stdId;
-            string stdname = student.stdName;
-            string stdEntrance = student.stdEntrance;
-            string stdResidence = student.stdResidence;
-
-            ModelState.Clear();
-            return View();
-        }
-
    [HttpGet]
         public ActionResult Index()
         {

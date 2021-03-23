@@ -4,6 +4,8 @@
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
 
+ }
+
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-purple">
     <div class="container-fluid text-center align-content-center justify-content-center">
@@ -22,8 +24,6 @@
                     <h1 class="text-left">Missouri Valley College Check-In Service</h1>
                     <hr />
                     <!--Input Group to Search Student Info-->
-                   
-
                     @using (Html.BeginForm("Index", "CheckIn", FormMethod.Post))
                     {
                         <form id="CheckForm" onsubmit="return false">
@@ -40,7 +40,7 @@
                                 @Html.TextBoxFor(model => model.stdResidence, new { @class = "form-control", @id = "form-control", placeholder = "Student Residence", disabled = "disabled" })
                             </div>
                             <div class="p-2 text-center">
-                                <button type="submit" id="submitBtn" class="btn btn-primary mt-4">Submit</button>
+                                <button type="submit" id="submitBtn" name="Submit" class="btn btn-primary mt-4">Submit</button>
                                 <button type="submit" value="Clear" name="Button" class="btn btn-Exit mt-4">Clear Data</button>
                                 
                             </div>
@@ -53,7 +53,7 @@
                     <!--Student Picture -->
                     <h1 class="font-weight-bold">Student</h1>
                     <div class="p-2 text-center">
-                        <img class="Student-pic" src="" />
+                        <img class="Student-pic" src="@Html.DisplayFor(model => model.finAid)" />
                     </div>
                     <div />
 
@@ -68,6 +68,7 @@
                 <table class="table text-break">
                     <thead>
                         <tr>
+                            <!--Offices-->
                             <th scope="col">Office</th>
                             <th class="w-25" scope="col">Status</th>
                             <th scope="col">What to do</th>
@@ -112,6 +113,7 @@
                             <th scope="row">Consent to Treat</th>
                             <td>@Html.DisplayFor(model => model.consenTreat)</td>
                             <td></td>
+                      
                         </tr>
                         <tr>
                             <th scope="row">Medical Alert Info</th>
