@@ -2,8 +2,8 @@
 ![Screenshot1](https://github.com/alrefaeomar/MOVAL_publicIntern/blob/main/Screenshots/Screenshot%202021-03-29%20103145.jpg)
 
 ## Table of Contents
-#### 1. [Technologies Used](#technologies-used)
-#### 2. [Instructions](#instructions) 
+#### 1. [Instructions](#instructions) 
+#### 2. [Technologies Used](#technologies-used)
 #### 3. [Usage](#usage)
 
 
@@ -17,18 +17,19 @@ Since we are facing a pandemic right now, the need of a contactless measurement 
 * C#
 * SQL Server
 * Bootstrap
-* 
+
+
 ## Instructions
 
-### Getting Started
+### Prequisites
 The first action needed to use this application is to clone it, by using:
 ```
 $ git clone https://github.com/alrefaeomar/MOVAL_publicIntern
 ```
 
-Then, Visual Studio will be needed in order to modify or alter the components inside the application, such as the Controllers, Layout, etc.
+Then, Visual Studio (preferably Visual Studio 2017) will be needed in order to modify or alter the components inside the application, such as the Controllers, Layout, etc.
 
-
+### Installation
 In order this Web application to be used in a different servers and computers, since the server are named and configured different. The following code needs to be changed according the SQL database information of the server that you will be using with this app.
 
 
@@ -48,4 +49,11 @@ On the CheckInController.cs located in the Controller folder, the SQL query can 
 
 ## Usage
 The students will be able to input their ID numbers in order to check what needs to be done in the offices of the college, also their residence and entrance. It is as easy as the user input his or her ID and click on the submit button to view their information.
+
+## Acknowledgements
+
+* [Font-Awesome](https://fontawesome.com/)
+* [W3Schools](https://www.w3schools.com/)
+* [BootStrap](https://getbootstrap.com/)
+* [Missouri Valley College](https://www.moval.edu/)
 
