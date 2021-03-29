@@ -2,9 +2,13 @@
 ![Screenshot1](https://github.com/alrefaeomar/MOVAL_publicIntern/blob/main/Screenshots/Screenshot%202021-03-29%20103145.jpg)
 
 ## Table of Contents
-#### 1. [Instructions](#instructions) 
-#### 2. [Technologies Used](#technologies-used)
-#### 3. [Usage](#usage)
+* [Introduction](#introduction) 
+* [Technologies Used](#technologies-used)
+* [Instructions](#instructions)
+  * [Prequisites](#prequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Acknowledgements](#acknowledgements)
 
 
 ## Introduction
