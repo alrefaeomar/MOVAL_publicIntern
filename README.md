@@ -1,15 +1,14 @@
 # Check In App Missouri Valley College
+![Screenshot1](https://github.com/alrefaeomar/MOVAL_publicIntern/blob/main/Screenshots/Screenshot%202021-03-29%20103145.jpg)
+
+## Table of Contents
+#### 1. [Technologies Used](#technologies-used)
+#### 2. [Instructions](#instructions) 
+#### 3. [Usage](#usage)
+
 
 ## Introduction
 Since we are facing a pandemic right now, the need of a contactless measurement is a must. Thus, a good measurement for this is to have a Web application where Student can access their information and check what academic papers they need prior to attend to the institution. 
-
-## Table of Contents
-1. [Technologies Used](#technologies-used)
-2. [Instructions](#instructions) 
-3. [Usage](#usage)
-
-
-
 
 ## Technologies Used
 * HTML
