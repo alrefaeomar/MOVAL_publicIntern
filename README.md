@@ -5,8 +5,8 @@ Since we are facing a pandemic right now, the need of a contactless measurement 
 
 ## Table of Contents
 1. [Technologies Used](#technologies-used)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
+2. [Usage](#Usage)
+3. [Instructions](#Instructions)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
 
