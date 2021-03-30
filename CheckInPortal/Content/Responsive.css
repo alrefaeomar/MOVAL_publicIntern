@@ -3,6 +3,9 @@
     .login {
         height: 1000px !important;
     }
+    .flex-xs-column {
+        flex-direction: column !important;
+    }
    
 }
 
@@ -10,7 +13,7 @@
 
 @media screen and (max-width:576px) {
     .flex-xs-column {
-        flex-direction: column;
+        flex-direction: column !important;
     }
 }
 
@@ -25,6 +28,9 @@
         padding-top: 10px;
         width: 80px !important;
     }
+    .flex-xs-column {
+        flex-direction: column !important;
+    }
 }
 
 @media screen and (max-width:360px) {
@@ -36,6 +42,9 @@
         padding-top: 10px;
         width: 80px !important;
     }
+    .flex-xs-column {
+        flex-direction: column !important;
+    }
 }
 
 
@@ -46,6 +55,9 @@
     }
     .btn-primary{
         padding-top: 10px;
+    }
+    .flex-xs-column {
+        flex-direction: column !important;
     }
 }
 

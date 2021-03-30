@@ -19,14 +19,7 @@ namespace CheckInPortal.Controllers
         [HttpPost]
         public ActionResult Index(string stdSearch, Student student, string Button)
         {
-
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
-
-
-
-            // Rest of Offices
-            //, REGISTRAR, FIN_AID, BUSS_OFFICE, ADMISSIONS, CONSENT_TREAT, MED_ALERT, IMMUNIZATIONS, EMERG_CONTACT
-
 
             //Select Table Where student Id is the Input 
             string sqlQuery = @"SELECT STUDENT_TABLE.STD_ID, STD_NAME, STD_ENTRANCE, STD_RESIDENCE, REGISTRAR, 
@@ -43,7 +36,7 @@ namespace CheckInPortal.Controllers
 
                     SqlDataReader sqlRead = sqlComm.ExecuteReader();
 
-                if (sqlRead.Read())
+                while(sqlRead.Read())
                 {
 
                     student.stdName = sqlRead["STD_NAME"].ToString();
@@ -51,8 +44,14 @@ namespace CheckInPortal.Controllers
                     student.stdEntrance = sqlRead["STD_ENTRANCE"].ToString();
 
                     
-
+                   
                     student.registrarOff = sqlRead["REGISTRAR"].ToString();
+
+                    if (student.registrarOff == "COMPLETE")
+                    {
+                        ViewBag.regstrarMsg = "TEST";
+                        return View();
+                    }
                     student.finAid = sqlRead["FIN_AID"].ToString();
                     student.bussOff = sqlRead["BUSS_OFFICE"].ToString();
                     student.admissions = sqlRead["ADMISSIONS"].ToString();
@@ -62,19 +61,20 @@ namespace CheckInPortal.Controllers
                     student.immunizations = sqlRead["IMMUNIZATIONS"].ToString();
                     student.emergContact = sqlRead["EMERG_CONTACT"].ToString();
 
-                    
-                    
+
                 }
                 sqlConn.Close();
             }
 
+          
+
             // Clear data Button
             if (Button == "Clear")
             {
+                ViewBag.regstrarMsg = "";
                 ModelState.Clear();
                 return PartialView();
-            } 
-
+            }
 
             return PartialView(student);
         }

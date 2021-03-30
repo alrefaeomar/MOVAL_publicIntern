@@ -3,9 +3,6 @@
 @{ ViewBag.Title = "Check In Portal - MVC"; }
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
-
- }
-
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-purple">
     <div class="container-fluid text-center align-content-center justify-content-center">
@@ -14,13 +11,13 @@
 
     </div>
 </nav>
-<section class="CheckInPage pt-4">
-    <div class="container-fluid">
-        <!--Row 1 -->
-        <!-- Forms to Input Student Info-->
-        <div class="row flex-sm-column flex-md-column flex-lg-row">
-            <div class="col col-sm col-md-12 col-lg-4">
-                <div class="CheckIn col bg-light justify-content-center align-content-center rounded-lg p-5">
+<section class="CheckInPage pt-4 pb-4">
+    <div class="container-fluid d-flex flex-xs-column flex-sm-column flex-md-column flex-lg-row align-content-center  justify-content-center">
+        <div class="row row-cols-lg-2 row-cols-md-1">
+            <!-- Forms to Input Student Info-->
+            <!--Column 1 -->
+            <div class="col-lg-4 ">
+                <div class="CheckIn bg-light justify-content-center align-content-center rounded-lg p-5">
                     <h1 class="text-left">Missouri Valley College Check-In Service</h1>
                     <hr />
                     <!--Input Group to Search Student Info-->
@@ -31,7 +28,7 @@
                                 @Html.TextBox("stdSearch", null, new { @class = "form-control", @id = "form-control", placeholder = "Student ID" })
                             </div>
                             <div class="input-group mb-3">
-                                @Html.TextBoxFor(model => model.stdName, new { @class = "form-control", @id= "form-control", placeholder = "Student Name", disabled = "disabled" })
+                                @Html.TextBoxFor(model => model.stdName, new { @class = "form-control", @id = "form-control", placeholder = "Student Name", disabled = "disabled" })
                             </div>
                             <div class="input-group mb-3">
                                 @Html.TextBoxFor(model => model.stdEntrance, new { @class = "form-control", @id = "form-control", placeholder = "Student Entrance", disabled = "disabled" })
@@ -41,99 +38,92 @@
                             </div>
                             <div class="p-2 text-center">
                                 <button type="submit" id="submitBtn" name="Submit" class="btn btn-primary mt-4">Submit</button>
+                               
                                 <button type="submit" value="Clear" name="Button" class="btn btn-Exit mt-4">Clear Data</button>
-                                
+
                             </div>
                         </form>
                     }
 
+                </div>
+            </div>
+            <!--Colummn 2-->
+            <!-- Tables where data is going to be displayed -->
+            <div class="col col-lg-8">
+                <div class="DataTable bg-light justify-content-center align-content-center CheckInList">
+                    <h2 class="font-weight-bold">CheckList </h2>
+                    <table class="table text-break">
+                        <thead>
+                            <tr>
+                                <!--Offices-->
+                                <th class="w-25" scope="col">Office</th>
+                                <th class="w-25" scope="col">Status</th>
+                                <th class="w-25" scope="col">What to do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Registrar's Office (FC-133)</th>
+                                <td id="tableStatus" class="tableStatus">@Html.DisplayFor(model => model.registrarOff)</td>
+                                <td id="Description">@ViewBag.regstrarMsg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Financial Aid (FC-126C)</th>
+                                <td class="tableStatus ">@Html.DisplayFor(model => model.finAid)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Business Office (FC-126B)</th>
+                                <td class="tableStatus">@Html.DisplayFor(model => model.bussOff)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Admissions (FC-126A)</th>
+                                <td class="tableStatus">@Html.DisplayFor(model => model.admissions)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <!-- Student Affairs Section of the Table-->
+                    <h2 class="font-weight-bold">Student Affairs</h2>
+                    <table class="table text-break">
+                        <thead>
+                            <tr>
+                                <th class="w-25" scope="col">Office</th>
+                                <th class="w-25" scope="col">Status</th>
+                                <th class="w-25" scope="col">What to do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Consent to Treat</th>
+                                <td>@Html.DisplayFor(model => model.consenTreat)</td>
+                                <td></td>
 
-                    <hr />
-
-                    <!--Student Picture -->
-                    <h1 class="font-weight-bold">Student</h1>
-                    <div class="p-2 text-center">
-                        <img class="Student-pic" src="@Html.DisplayFor(model => model.finAid)" />
-                    </div>
-                    <div />
+                            </tr>
+                            <tr>
+                                <th scope="row">Medical Alert Info</th>
+                                <td>@Html.DisplayFor(model => model.medicalAlert)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Immunizations</th>
+                                <td>@Html.DisplayFor(model => model.immunizations)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Emergency Contact</th>
+                                <td>@Html.DisplayFor(model => model.emergContact)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
+            <!-- End Row 1 -->
         </div>
-
-        <!-- Tables where data is going to be displayed -->
-        <div class="col mt-lg-0 mt-md-5 mt-sm-5 mt-xs-5">
-            <div class="DataTable bg-light justify-content-center align-content-center CheckInList">
-                <h1 class="font-weight-bold">CheckList </h1>
-                <table class="table text-break">
-                    <thead>
-                        <tr>
-                            <!--Offices-->
-                            <th scope="col">Office</th>
-                            <th class="w-25" scope="col">Status</th>
-                            <th scope="col">What to do</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Registrar's Office (FC-133)</th>
-                            <td>@Html.DisplayFor(model => model.registrarOff)</td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Financial Aid (FC-126C)</th>
-                            <td>@Html.DisplayFor(model => model.finAid)</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Business Office (FC-126B)</th>
-                            <td>@Html.DisplayFor(model => model.bussOff)</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Admissions (FC-126A)</th>
-                            <td>@Html.DisplayFor(model => model.admissions)</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <hr>
-                <!-- Student Affairs Section of the Table-->
-                <h1 class="font-weight-bold">Student Affairs</h1>
-                <table class="table text-break">
-                    <thead>
-                        <tr>
-                            <th scope="col">Office</th>
-                            <th class="w-25" scope="col">Status</th>
-                            <th scope="col">What to do</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Consent to Treat</th>
-                            <td>@Html.DisplayFor(model => model.consenTreat)</td>
-                            <td></td>
-                      
-                        </tr>
-                        <tr>
-                            <th scope="row">Medical Alert Info</th>
-                            <td>@Html.DisplayFor(model => model.medicalAlert)</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Immunizations</th>
-                            <td>@Html.DisplayFor(model => model.immunizations)</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Emergency Contact</th>
-                            <td>@Html.DisplayFor(model => model.emergContact)</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- End Row 1 -->
     </div>
+
 </section>

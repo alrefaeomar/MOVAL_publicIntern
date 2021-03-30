@@ -66,16 +66,16 @@ input {
     -webkit-box-shadow: -2px 9px 43px -6px rgba(0,0,0,0.55);
     -moz-box-shadow: -2px 9px 43px -6px rgba(0,0,0,0.55);
     box-shadow: -0px 9px 43px -6px rgba(0,0,0,0.55);
+   
 
 }
 
-
-.CheckList{
+    .CheckList{
     padding-top: 24px;
 }
 
 .CheckInList{
-    padding: 40px;
+    padding: 25px;
     border-radius: 2.3rem !important;
     -webkit-box-shadow: -2px 9px 43px -6px rgba(0,0,0,0.55);
     -moz-box-shadow: -2px 9px 43px -6px rgba(0,0,0,0.55);
@@ -134,9 +134,14 @@ input {
 }
 
 .table{
-   padding: 400px;
+   padding: 10px;
 }
-
+table th{
+    font-size: 15px !important;
+}
+table td{
+    font-size: 15px !important;
+}
 .btn{
     width: 200px !important;
 }
