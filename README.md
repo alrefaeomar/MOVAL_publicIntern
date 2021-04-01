@@ -8,6 +8,7 @@
   * [Prequisites](#prequisites)
   * [Installation](#installation)
 * [Usage](#usage)
+* [Technical Documentation](#technical-documentation)
 * [Acknowledgements](#acknowledgements)
 
 
@@ -53,6 +54,21 @@ On the CheckInController.cs located in the Controller folder, the SQL query can 
 
 ## Usage
 The students will be able to input their ID numbers in order to check what needs to be done in the offices of the college, also their residence and entrance. It is as easy as the user input his or her ID and click on the submit button to view their information.
+
+## Technical Documentation
+On the *CheckInController.cs*  we have two Index action methods. One will handle the view of the page, and the secon one will handle the functionability of the app. We use  `[HttpPost] ` in order to send the data inputted in the form to the database, and display it in the Tables and text boxes. One good thing about using `[HttpPost] ` is that it hides information from the URL, being more secure that `[HttpGet]` method.
+```
+  [HttpPost]
+        public ActionResult Index(string stdSearch, Student student, string Button)
+        {
+            return View();
+        }
+```
+
+On the First *Index* action method, we set three parameters, **stdSearch** will help to handle the query in order to search for the ID of an student, **Student student** passes the current model used for this application, an **string Button** handles the *Clear Data* Button, so students will be able to clear all the fields of text.
+   
+  
+
 
 ## Acknowledgements
 
