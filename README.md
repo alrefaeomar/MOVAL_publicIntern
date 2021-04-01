@@ -61,13 +61,23 @@ On the *CheckInController.cs*  we have two Index action methods. One will handle
   [HttpPost]
         public ActionResult Index(string stdSearch, Student student, string Button)
         {
-            return View();
+          ...
         }
 ```
 
 On the First *Index* action method, we set three parameters, **stdSearch** will help to handle the query in order to search for the ID of an student, **Student student** passes the current model used for this application, an **string Button** handles the *Clear Data* Button, so students will be able to clear all the fields of text.
    
-  
+Moving on with this Action method, we establish our connection string, so we can execute Sql queries and retreive the data from the database. We define a string for our query, where the two tables **STUDENT_TABLE** and **OFFICES_TABLE** are joined, so the attributes can be selected based on the ID **@sid**.
+```
+  SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
+
+            //Select Table Where student Id is the Input 
+            string sqlQuery = @"SELECT STUDENT_TABLE.STD_ID, STD_NAME, STD_ENTRANCE, STD_RESIDENCE, REGISTRAR, 
+                FIN_AID, BUSS_OFFICE, ADMISSIONS, CONSENT_TREAT, MED_ALERT, IMMUNIZATIONS, EMERG_CONTACT FROM STUDENT_TABLE
+                INNER JOIN OFFICES_TABLE ON STUDENT_TABLE.STD_ID = OFFICES_TABLE.STD_ID WHERE STUDENT_TABLE.STD_ID=@sid";
+
+```
+
 
 
 ## Acknowledgements
