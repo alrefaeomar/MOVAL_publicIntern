@@ -121,6 +121,17 @@ We create a while statement, where the SqlDataReader class is set a condition. T
         }
 ```
 
+In addition, a conditional is created in order to clear the data from the view. Using the ModelState with the method **Clear()**, the state of the model is cleared and the data will be cleared from the view.
+
+```
+            if (Button == "Clear")
+            {
+           
+                ModelState.Clear();
+                return PartialView();
+            }
+```
+
 ## Acknowledgements
 
 * [Font-Awesome](https://fontawesome.com/)
