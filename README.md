@@ -67,7 +67,7 @@ On the *CheckInController.cs*  we have two Index action methods. One will handle
 
 On the First *Index* action method, we set three parameters, **stdSearch** will help to handle the query in order to search for the ID of an student, **Student student** passes the current model used for this application, an **string Button** handles the *Clear Data* Button, so students will be able to clear all the fields of text.
    
-Moving on with this Action method, we establish our connection string, so we can execute Sql queries and retreive the data from the database. We define a string for our query, where the two tables **STUDENT_TABLE** and **OFFICES_TABLE** are joined, so the attributes can be selected based on the ID **@sid**.
+Moving on with this Action method, we establish our connection string, so we establish the connection with the SQL server. Allowing to execute Sql queries and retreive the data from the database. We define a string for our query, where the two tables **STUDENT_TABLE** and **OFFICES_TABLE** are joined, so the attributes can be selected based on the ID **@sid**.
 ```
   SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
 
@@ -78,7 +78,48 @@ Moving on with this Action method, we establish our connection string, so we can
 
 ```
 
+We initialize and using statement where we pass **sqlQuery** and **sqlConn** in order to pass and create the events that we need to happen in the Application. Inside this statement, we open our connection, we use the SQL command that defined on the using statement to create parameters for the search functonality. **stdSearch** is the variable that is gonna store the value inputted and passed to the **@sid** in our query. Lastly, we create a SqlDataReader class, and set it to be executed, so the value inputted is read by the application.
 
+```
+  using (SqlCommand sqlComm = new SqlCommand(sqlQuery, sqlConn))
+            {
+               
+                sqlConn.Open();
+                sqlComm.Parameters.AddWithValue("@sid", stdSearch);
+
+
+                    SqlDataReader sqlRead = sqlComm.ExecuteReader();
+```
+
+We create a while statement, where the SqlDataReader class is set a condition. This condition will consist that if it reads, the application will retrieve the data from database and set it to the values created in the Student model. Lastly, the Sql connection is closed, and we return a **PartialView** passing the Student Model so the data from the database will passed to the view.
+
+```
+ while(sqlRead.Read())
+                {
+
+                    student.stdName = sqlRead["STD_NAME"].ToString();
+                    student.stdResidence = sqlRead["STD_RESIDENCE"].ToString();
+                    student.stdEntrance = sqlRead["STD_ENTRANCE"].ToString();
+
+                    
+                   
+                    student.registrarOff = sqlRead["REGISTRAR"].ToString();
+                    student.finAid = sqlRead["FIN_AID"].ToString();
+                    student.bussOff = sqlRead["BUSS_OFFICE"].ToString();
+                    student.admissions = sqlRead["ADMISSIONS"].ToString();
+
+                    student.consenTreat = sqlRead["CONSENT_TREAT"].ToString();
+                    student.medicalAlert = sqlRead["MED_ALERT"].ToString();
+                    student.immunizations = sqlRead["IMMUNIZATIONS"].ToString();
+                    student.emergContact = sqlRead["EMERG_CONTACT"].ToString();
+
+
+                }
+                sqlConn.Close();
+            }
+            return PartialView(student);
+        }
+```
 
 ## Acknowledgements
 
