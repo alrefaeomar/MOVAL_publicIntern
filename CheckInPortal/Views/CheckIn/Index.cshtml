@@ -75,17 +75,21 @@
                             <tr>
                                 <th scope="row">Registrar's Office (FC-133)</th>
                                 <td id="tableStatus" class="tableStatus">@Html.DisplayFor(model => model.registrarOff)</td>
-                                <td id="Description"> @ViewBag.regstrarMsg</td>
+                                <td id="Description">@ViewBag.regstrarMsg</td>
                             </tr>
                             <tr>
                                 <th scope="row">Financial Aid (FC-126C)</th>
                                 <td class="tableStatus ">@Html.DisplayFor(model => model.finAid)</td>
-                                <td>@ViewBag.finAidMsg</td>
+                                <td>@ViewBag.finAidMsg <br /> <a href="#">Click Here to visit your Financial Aid Portal</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">Business Office (FC-126B)</th>
                                 <td class="tableStatus">@Html.DisplayFor(model => model.bussOff)</td>
-                                <td>@ViewBag.bussOffMsg</td>
+                                <td>
+                                    @ViewBag.bussOffMsg <br /><a href="#">Print Payment Plan Form</a>
+                                                        <br /><a href="#">Make Online Payment Now</a>
+                                                        <br /><a href="#">Sign Financial Responsibility Form</a>
+                                                            </td>
                             </tr>
                             <tr>
                                 <th scope="row">Admissions (FC-126A)</th>
@@ -109,23 +113,36 @@
                             <tr>
                                 <th scope="row">Consent to Treat</th>
                                 <td>@Html.DisplayFor(model => model.consenTreat)</td>
-                                <td>@ViewBag.consenTreatMsg</td>
+                                <td>
+                                    @ViewBag.consenTreatMsg
+                                    <br /><a href="#">Complete Your Consent Form</a>
+                                </td>
 
                             </tr>
                             <tr>
                                 <th scope="row">Medical Alert Info</th>
                                 <td>@Html.DisplayFor(model => model.medicalAlert)</td>
-                                <td>@ViewBag.medicalAlertMsg</td>
+                                <td>
+                                    @ViewBag.medicalAlertMsg
+                                    <br /><a href="#">Complete Your Medical Alert Form</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Immunizations</th>
                                 <td>@Html.DisplayFor(model => model.immunizations)</td>
-                                <td>@ViewBag.immunizationsMsg</td>
+                                <td>
+                                    @ViewBag.immunizationsMsg
+                                    <br /><a href="#">Complete Your Immunizations Form</a>
+                                    <br /><a href="#">Complete Your TB Form</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Emergency Contact</th>
                                 <td>@Html.DisplayFor(model => model.emergContact)</td>
-                                <td>@ViewBag.emergContactMsg</td>
+                                <td>
+                                    @ViewBag.emergContactMsg
+                                    <br /><a href="#">Update Your Emergency Contact Information</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

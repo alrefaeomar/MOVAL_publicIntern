@@ -69,7 +69,7 @@ namespace CheckInPortal.Controllers
                     }
                     if (student.admissions.Trim() == "UNCOMPLETE")
                     {
-                        ViewBag.admissionsMsg = "Call the Admissions Office (Phone Number) or email admissions@moval.edu";
+                        ViewBag.admissionsMsg = "Call the Admissions Office 660-831-4114 or email admissions@moval.edu";
                     }
 
 
@@ -79,7 +79,7 @@ namespace CheckInPortal.Controllers
                     }
                     if (student.medicalAlert.Trim() == "UNCOMPLETE")
                     {
-                        ViewBag.medicalAlertMsg = "Needs text";
+                        ViewBag.medicalAlertMsg = "Please Complete the Forms";
                     }
                     if (student.immunizations.Trim() == "UNCOMPLETE")
                     {
@@ -87,7 +87,7 @@ namespace CheckInPortal.Controllers
                     }
                     if (student.emergContact.Trim() == "UNCOMPLETE")
                     {
-                        ViewBag.emergContactMsg = "Needs text";
+                        ViewBag.emergContactMsg = "You do not have an emergency contact, please complete the forms";
                     }
 
 
