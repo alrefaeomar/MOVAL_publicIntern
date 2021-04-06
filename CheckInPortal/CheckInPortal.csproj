@@ -144,7 +144,6 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CheckInController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -165,6 +164,7 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
       <LastGenOutput>CheckInModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\Assets\Collegaite Vertical White.png" />
     <Content Include="Content\Assets\MVC.jpg" />
     <Content Include="Content\Assets\mvclogo.png" />
     <Content Include="Content\Assets\valley2.jpg" />

@@ -3,11 +3,21 @@
 @{ ViewBag.Title = "Check In Portal - MVC"; }
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
-<!--Nav Bar-->
+
+<style>
+    .MVC-Brand{
+         width: 7%;
+    }
+    .navbar{
+        z-index: 1;
+    }
+</style>
+
+<!--Nav Bar--> 
 <nav class="navbar navbar-expand-lg navbar-light bg-purple">
     <div class="container-fluid text-center align-content-center justify-content-center">
         <!-- Logo with link to Moval.edu-->
-        <a class="navbar-brand" href="https://www.moval.edu/"><img class="MVC-Brand" src="~/Content/Assets/mvclogo.png" /></a>
+        <a class="navbar-brand" href="https://www.moval.edu/"><img class="MVC-Brand" src="~/Content/Assets/Collegaite Vertical White.png" /></a>
 
     </div>
 </nav>
@@ -58,29 +68,29 @@
                                 <!--Offices-->
                                 <th class="w-25" scope="col">Office</th>
                                 <th class="w-25" scope="col">Status</th>
-                                <th class="w-25" scope="col">What to do</th>
+                                <th class="w-50" scope="col">What to do</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">Registrar's Office (FC-133)</th>
                                 <td id="tableStatus" class="tableStatus">@Html.DisplayFor(model => model.registrarOff)</td>
-                                <td id="Description">@ViewBag.regstrarMsg</td>
+                                <td id="Description"> @ViewBag.regstrarMsg</td>
                             </tr>
                             <tr>
                                 <th scope="row">Financial Aid (FC-126C)</th>
                                 <td class="tableStatus ">@Html.DisplayFor(model => model.finAid)</td>
-                                <td></td>
+                                <td>@ViewBag.finAidMsg</td>
                             </tr>
                             <tr>
                                 <th scope="row">Business Office (FC-126B)</th>
                                 <td class="tableStatus">@Html.DisplayFor(model => model.bussOff)</td>
-                                <td></td>
+                                <td>@ViewBag.bussOffMsg</td>
                             </tr>
                             <tr>
                                 <th scope="row">Admissions (FC-126A)</th>
                                 <td class="tableStatus">@Html.DisplayFor(model => model.admissions)</td>
-                                <td></td>
+                                <td>@ViewBag.admissionsMsg</td>
                             </tr>
                         </tbody>
                     </table>
@@ -92,30 +102,30 @@
                             <tr>
                                 <th class="w-25" scope="col">Office</th>
                                 <th class="w-25" scope="col">Status</th>
-                                <th class="w-25" scope="col">What to do</th>
+                                <th class="w-50" scope="col">What to do</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">Consent to Treat</th>
                                 <td>@Html.DisplayFor(model => model.consenTreat)</td>
-                                <td></td>
+                                <td>@ViewBag.consenTreatMsg</td>
 
                             </tr>
                             <tr>
                                 <th scope="row">Medical Alert Info</th>
                                 <td>@Html.DisplayFor(model => model.medicalAlert)</td>
-                                <td></td>
+                                <td>@ViewBag.medicalAlertMsg</td>
                             </tr>
                             <tr>
                                 <th scope="row">Immunizations</th>
                                 <td>@Html.DisplayFor(model => model.immunizations)</td>
-                                <td></td>
+                                <td>@ViewBag.immunizationsMsg</td>
                             </tr>
                             <tr>
                                 <th scope="row">Emergency Contact</th>
                                 <td>@Html.DisplayFor(model => model.emergContact)</td>
-                                <td></td>
+                                <td>@ViewBag.emergContactMsg</td>
                             </tr>
                         </tbody>
                     </table>

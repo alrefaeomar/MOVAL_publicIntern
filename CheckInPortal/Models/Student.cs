@@ -12,7 +12,6 @@ namespace CheckInPortal.Models
         public string stdEntrance { get; set; }
         public string stdResidence { get; set; }
 
-        public byte[] stdImage { get; set; }
 
         public string registrarOff { get; set; }
         public string finAid { get; set; }

@@ -43,15 +43,7 @@ namespace CheckInPortal.Controllers
                     student.stdResidence = sqlRead["STD_RESIDENCE"].ToString();
                     student.stdEntrance = sqlRead["STD_ENTRANCE"].ToString();
 
-                    
-                   
                     student.registrarOff = sqlRead["REGISTRAR"].ToString();
-
-                    if (student.registrarOff == "COMPLETE")
-                    {
-                        ViewBag.regstrarMsg = "TEST";
-                        return View();
-                    }
                     student.finAid = sqlRead["FIN_AID"].ToString();
                     student.bussOff = sqlRead["BUSS_OFFICE"].ToString();
                     student.admissions = sqlRead["ADMISSIONS"].ToString();
@@ -60,6 +52,44 @@ namespace CheckInPortal.Controllers
                     student.medicalAlert = sqlRead["MED_ALERT"].ToString();
                     student.immunizations = sqlRead["IMMUNIZATIONS"].ToString();
                     student.emergContact = sqlRead["EMERG_CONTACT"].ToString();
+
+                    // Conditionals for Uncomplete offices
+                      //Messages will be displayed if == UNCOMPLETE
+                    if (student.registrarOff.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.regstrarMsg = "Call the Registrar's office 660-831-4122 or email registrar@moval.edu";
+                    }
+                    if (student.finAid.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.finAidMsg = "Call the Financial aid office 660-831-4171 or email financialaid@moval.edu";
+                    }
+                    if (student.bussOff.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.bussOffMsg = "Call the Business Office 660-831-4105 or email businessoffice@moval.edu";
+                    }
+                    if (student.admissions.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.admissionsMsg = "Call the Admissions Office (Phone Number) or email admissions@moval.edu";
+                    }
+
+
+                    if (student.consenTreat.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.consenTreatMsg = "You do not consent to be treated in an Emergency, Complete the form ";
+                    }
+                    if (student.medicalAlert.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.medicalAlertMsg = "Needs text";
+                    }
+                    if (student.immunizations.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.immunizationsMsg = "Please Complete the Forms";
+                    }
+                    if (student.emergContact.Trim() == "UNCOMPLETE")
+                    {
+                        ViewBag.emergContactMsg = "Needs text";
+                    }
+
 
 
                 }
@@ -72,6 +102,16 @@ namespace CheckInPortal.Controllers
             if (Button == "Clear")
             {
                 ViewBag.regstrarMsg = "";
+                ViewBag.finAidMsg = "";
+                ViewBag.bussOffMsg = "";
+                ViewBag.admissionsMsg = "";
+
+                ViewBag.consenTreatMsg = "";
+                ViewBag.medicalAlertMsg = "";
+                ViewBag.immunizationsMsg = "";
+                ViewBag.emergContactMsg = "";
+
+
                 ModelState.Clear();
                 return PartialView();
             }
