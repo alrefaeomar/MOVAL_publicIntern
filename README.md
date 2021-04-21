@@ -20,7 +20,6 @@ Since we are facing a pandemic right now, the need of a contactless measurement 
 * CSS
 * Javascript
 * C#
-* SQL Server
 * Bootstrap
 
 
